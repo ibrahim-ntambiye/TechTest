@@ -12,22 +12,7 @@ const Form = (props) => {
     const [artistName, setArtist] = useState('');
     const [error, setError] = useState(false);
 
-    const calculateAverange = (songsArray) => {
-        for (var i = 0; i < songsArray.length; i++) {
-            sum += parseInt(songsArray[i], 10); //don't forget to add the base
-        }
-        avg = sum / songsArray.length;
-    }
 
-    const calculateLyrics = (songTitle) => {
-        axios.get(`https://api.lyrics.ovh/v1/${artistName}/${songTitle}`).then(response => {
-            let lyricsCount = response.data.lyrics.split(' ').length
-            lyricsCountArray.push(lyricsCount)
-            console.log(lyricsCountArray)
-            return lyricsCount;
-        })
-            .catch(error => console.log(error))
-    }
 
     const handleSubmit = async (event) => {
         if (artistName !== '') {
