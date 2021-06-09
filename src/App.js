@@ -5,12 +5,13 @@ import FormList from "./Components/FormList";
 
 function App(props) {
   const [searchResults, setSearchResults] = useState([]);
+  const [artistName, setArtist] = useState('');
 
   return (
     <div className="App">
       <h1>Average Artist Word Count</h1>
-      <Form setSearchResults={setSearchResults} />
-      <FormList searchResults={searchResults} />
+      <Form setSearchResults={setSearchResults} setArtist={setArtist} artistName={artistName}/>
+      <FormList searchResults={searchResults} artistName={artistName}/>
     </div>
   );
 }

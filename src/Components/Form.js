@@ -9,7 +9,8 @@ const Form = (props) => {
     const avg = 0;
 
 
-    const [artistName, setArtist] = useState('');
+    const {artistName} = props;
+    const {setArtist} = props;
     const [error, setError] = useState(false);
 
 
